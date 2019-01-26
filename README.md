@@ -4,6 +4,8 @@
 
 引入插件配置如下：
  &lt;build&gt;
+ 
+ 
       &lt;plugins&gt;
         &lt;plugin&gt;
           &lt;groupId&gt;mvc-generator-plugin</groupId&gt;
