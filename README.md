@@ -3,7 +3,7 @@
 配置xml文件如下：
 
 引入插件配置如下：
- <build>
+ &lt;build&gt;
       <plugins>
         <plugin>
           <groupId>mvc-generator-plugin</groupId>
