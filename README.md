@@ -14,9 +14,9 @@
           <configuration>
                 <sqlScript>
                 CREATE TABLE `scene` (
-                    `id` INT NOT NULL AUTO_INCREMENT COMMENT '场景主键ID',
+                    `id` INT NOT NULL AUTO_INCREMENT COMMENT '主键ID',
                     `name` VARCHAR(45) NOT NULL COMMENT '名字',
-                    `code` VARCHAR(45) NOT NULL COMMENT '场景code',
+                    `code` VARCHAR(45) NOT NULL COMMENT '编码',
                     `valid` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '1:有效,0无效',
                     PRIMARY KEY (`id`))
                 </sqlScript>
