@@ -28,11 +28,11 @@ public class EntityToModuleHelper implements Function<Entity, Module>{
     }
 
     /**
-     * 创建.java文件所在路径 和 返回.java文件File对象
-     * @param outDirFile 生成文件路径
-     * @param javaPackage java包名
-     * @param javaClassName java类名
-     * @return
+     * path of to create java file
+     * @param outDirFile direct to generate java file
+     * @param javaPackage java class package
+     * @param javaClassName java class name
+     * @return java file
      */
     private static File toJavaFilename(File outDirFile, String javaPackage, String javaClassName) {
         String packageSubPath = javaPackage.replace('.', '/');

@@ -6,17 +6,34 @@ import java.util.List;
  * Created by bianwentao on 2018/12/13.
  */
 public class Entity {
-    // 配置根依赖
+    /**
+     * common basic info
+     */
     private String base;
-    // 实体所在的包名
+
+    /**
+     * class package
+     */
     private String javaPackage;
-    // 实体类名
+
+    /**
+     * class name
+     */
     private String className;
-    // 父类名
+
+    /**
+     * super class name
+     */
     private String superClass;
-    // 属性集合
+
+    /**
+     * table fields properties for freemarker template
+     */
     List<Property> properties;
-    // 是否有构造函数
+
+    /**
+     * is or not generate  constructor for entity
+     */
     private boolean constructors;
 
     /**
@@ -24,12 +41,24 @@ public class Entity {
      */
     private String comments;
 
+    /**
+     * directory type
+     */
     private String type;
 
+    /**
+     * project source directory
+     */
     String sourceDirectory;
 
+    /**
+     * class package path
+     */
     String packagePath;
 
+    /**
+     * common package
+     */
     String commonPackage;
 
     public String getJavaPackage() {

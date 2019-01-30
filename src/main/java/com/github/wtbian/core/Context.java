@@ -6,18 +6,23 @@ import java.util.List;
  * Created by bianwentao on 2019/1/26.
  */
 public class Context {
-
-    String sourceDirectory;
     /**
-     * sql
+     * project source directory
+     */
+    String sourceDirectory;
+
+    /**
+     * sql text
      */
     private String sqlScript;
+
     /**
-     * 数据库名称
+     * table name
      */
     private String tableName;
+
     /**
-     * 字段属性
+     * table fields properties
      */
     private List<Property> properties;
 
@@ -26,18 +31,33 @@ public class Context {
      */
     private String comments;
 
+    /**
+     * directory for dao level code generate
+     */
     private String daoDirectory;
 
+    /**
+     * directory for service level code generate
+     */
     private String serviceDirectory;
 
+    /**
+     * directory for controller level code generate
+     */
     private String controllerDirectory;
 
+    /**
+     * directory for vo level code generate
+     */
     private String voDirectory;
 
+    /**
+     * directory for domain level code generate
+     */
     private String domainDirectory;
 
     /**
-     *
+     * constructor
      */
 
     private Context() {

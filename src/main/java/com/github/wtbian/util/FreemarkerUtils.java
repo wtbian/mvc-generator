@@ -45,7 +45,7 @@ public class FreemarkerUtils {
 
 	public static void destroy() throws Exception {
 		if (!FileSystemUtils.deleteRecursively(new File(tmpdir)))
-			System.out.println("---------------删除临时文件异常-----------------");
+			System.out.println("---------------delete tmp file-----------------");
 	}
 
 }

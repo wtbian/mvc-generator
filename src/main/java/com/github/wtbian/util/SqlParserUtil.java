@@ -19,9 +19,9 @@ import java.util.List;
  */
 public class SqlParserUtil {
     /**
-     * 解析建表语句
-     * @param sql
-     * @return
+     * parse sql statement
+     * @param sql sql statement
+     * @return {@link Context}
      * @throws JSQLParserException
      */
     public static Context parseCreateTable(String sql) throws JSQLParserException {

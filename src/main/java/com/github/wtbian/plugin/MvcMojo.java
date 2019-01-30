@@ -16,16 +16,12 @@ package com.github.wtbian.plugin;
  * limitations under the License.
  */
 
-import com.alibaba.fastjson.JSON;
 import com.github.wtbian.core.Generator;
-import com.github.wtbian.util.SqlParserUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
-
-import java.io.File;
 
 @Mojo(name = "mvc")
 public class MvcMojo
@@ -56,7 +52,7 @@ public class MvcMojo
             throws MojoExecutionException {
 
         if (StringUtils.isBlank(sqlScript)) {
-            getLog().error(new Exception("sqlScript:" + this.sqlScript + ",必须符合sql规范"));
+            getLog().error(new Exception("sqlScript:" + this.sqlScript + ", must be observe SQL syntax"));
             return;
         }
 
