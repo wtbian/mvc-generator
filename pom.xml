@@ -3,9 +3,37 @@
     <groupId>com.github.wtbian</groupId>
     <artifactId>generator-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2</version>
     <name>generator-maven-plugin Maven Mojo</name>
+    <description>
+        The mvc-generator makes it easier to write code with spring-mvc
+        applications. mvc-generator generate code with freemarker template of controller, service and dao etc level object using maven plugin.
+        Simplicity is the biggest advantage of the generator code over generating code
+        tools.
+    </description>
     <url>http://maven.apache.org</url>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>https://github.com/wtbian/mvc-generator/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>wtbian</id>
+            <name>bianwentao</name>
+            <email>1250332650@qq.com</email>
+            <organization>personal</organization>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <jdk.version>1.8</jdk.version>
@@ -83,27 +111,6 @@
         <finalName>mvc-generator</finalName>
         <pluginManagement>
             <plugins>
-                <!--     <plugin>
-                       <groupId>org.apache.maven.plugins</groupId>
-                       <artifactId>maven-plugin-plugin</artifactId>
-                       <version>3.2</version>
-                       <configuration>
-                         <goalPrefix>generator</goalPrefix>
-                         <skipErrorNoDescriptorsFound>false</skipErrorNoDescriptorsFound>
-                       </configuration>
-                       <executions>
-                         <execution>
-                           <id>mojo-descriptor</id>
-                           <goals>
-                             <goal>descriptor</goal>
-                           </goals>
-                         </execution>
-                         <execution>
-                           <id>help-goal</id>
-                           &lt;!&ndash; <goals> <goal>helpmojo</goal> </goals> &ndash;&gt;
-                         </execution>
-                       </executions>
-                     </plugin>-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -118,16 +125,15 @@
 
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -140,24 +146,64 @@
                     <goals>deploy</goals>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
 
     <distributionManagement>
         <snapshotRepository>
-            <id>oss-snapshot</id>
+            <id>ossrh</id>
             <name>OSS Snapshot Repository</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>oss-staging</id>
+            <id>ossrh</id>
             <name>OSS Staging Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
 
-    <repositories>
+<!--    <repositories>
         <repository>
             <id>public</id>
             <name>for snapshot and release artifacts</name>
@@ -181,9 +227,9 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
 
-    <pluginRepositories>
+    <!--<pluginRepositories>
     <pluginRepository>
         <id>public</id>
         <name>for snapshot and release artifacts</name>
@@ -208,5 +254,5 @@
         </releases>
     </pluginRepository>
     </pluginRepositories>
-
+-->
 </project>
