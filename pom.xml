@@ -203,9 +203,9 @@
         </repository>
     </distributionManagement>
 
-<!--    <repositories>
+    <repositories>
         <repository>
-            <id>public</id>
+            <id>ossrh</id>
             <name>for snapshot and release artifacts</name>
             <url>https://oss.sonatype.org/content/groups/public</url>
             <releases>
@@ -217,7 +217,7 @@
         </repository>
 
         <repository>
-            <id>staging</id>
+            <id>ossrh</id>
             <name>for snapshot, release and staged artifacts</name>
             <url>https://oss.sonatype.org/content/groups/staging</url>
             <releases>
@@ -227,7 +227,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>-->
+    </repositories>
 
     <!--<pluginRepositories>
     <pluginRepository>
