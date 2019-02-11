@@ -18,7 +18,8 @@ public class Property {
     }
 
     public void setJavaType(String javaType) {
-        switch (javaType) {
+        String str=javaType.toUpperCase();
+        switch (str) {
             case "VARCHAR":
                 this.javaType = "String";
                 break;
