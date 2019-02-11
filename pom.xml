@@ -205,7 +205,7 @@
 
     <repositories>
         <repository>
-            <id>ossrh</id>
+            <id>ossrh-public</id>
             <name>for snapshot and release artifacts</name>
             <url>https://oss.sonatype.org/content/groups/public</url>
             <releases>
@@ -217,7 +217,7 @@
         </repository>
 
         <repository>
-            <id>ossrh</id>
+            <id>ossrh-staging</id>
             <name>for snapshot, release and staged artifacts</name>
             <url>https://oss.sonatype.org/content/groups/staging</url>
             <releases>
