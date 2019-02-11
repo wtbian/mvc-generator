@@ -10,7 +10,7 @@
         <plugin>
           <groupId>mvc-generator-plugin</groupId>
           <artifactId>generator-maven-plugin</artifactId>
-          <version>1.0.0-SNAPSHOT</version>
+          <version>1.0.4</version>
           <configuration>
                 <sqlScript>
                 CREATE TABLE `scene` (
